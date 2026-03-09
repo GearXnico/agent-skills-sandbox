@@ -1,9 +1,9 @@
 #!/usr/bin/env sh
 # Usage: worker.sh <order-id> <amount>
 . ./worker.env
-if ./provider.sh charge "$1" "$2" "$PAYMENT_TIMEOUT"; then
-  echo "order $1 paid"
-else
-  echo "order $1 charge failed" >&2
-  exit 1
-fi
+attempt=0
+until ./provider.sh charge "$1" "$2" "$PAYMENT_TIMEOUT"; do
+  attempt=$((attempt + 1))
+  echo "order $1 charge failed (attempt $attempt), retrying" >&2
+done
+echo "order $1 paid"
