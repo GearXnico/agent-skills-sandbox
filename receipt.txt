@@ -1,1 +1,1 @@
-Thanks for your order {order_id}. We charged {amount}.
+Thanks for your order {order_id}. We charged {amount}. Questions? Reply to this email.
