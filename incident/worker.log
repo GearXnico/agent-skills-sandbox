@@ -1,0 +1,13 @@
+2026-10-21T13:52:40Z INFO order 9810 paid customer=c.morales@example.com amount=1990 provider_latency=0.8s
+2026-10-21T13:58:12Z INFO order 9811 paid customer=r.soto@example.com amount=3490 provider_latency=0.9s
+2026-10-21T14:05:03Z WARN order 9812 charge failed (attempt 1), retrying customer=j.perez@example.com provider_latency=2.6s timeout=2s
+2026-10-21T14:05:06Z INFO order 9812 paid customer=j.perez@example.com amount=4990 provider_latency=1.7s
+2026-10-21T14:07:41Z WARN order 9813 charge failed (attempt 1), retrying customer=a.diaz@example.com provider_latency=3.1s timeout=2s
+2026-10-21T14:07:45Z WARN order 9813 charge failed (attempt 2), retrying customer=a.diaz@example.com provider_latency=2.9s timeout=2s
+2026-10-21T14:07:48Z INFO order 9813 paid customer=a.diaz@example.com amount=1290 provider_latency=1.9s
+2026-10-21T14:31:00Z INFO support ticket 5521 opened: customer reports being charged twice for order 9812
+2026-10-21T14:58:19Z WARN order 9840 charge failed (attempt 1), retrying customer=m.rojas@example.com provider_latency=2.4s timeout=2s
+2026-10-21T14:58:22Z INFO order 9840 paid customer=m.rojas@example.com amount=2590 provider_latency=1.5s
+2026-10-21T15:25:30Z INFO worker restarted with PAYMENT_TIMEOUT=30
+2026-10-21T15:39:55Z INFO order 9851 paid customer=p.vega@example.com amount=1990 provider_latency=2.7s
+2026-10-21T15:41:10Z INFO order 9852 paid customer=l.nunez@example.com amount=990 provider_latency=0.9s
