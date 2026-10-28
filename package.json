@@ -1,0 +1,13 @@
+{
+  "name": "sandbox-deps",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "lodash": "4.17.20"
+  }
+}
