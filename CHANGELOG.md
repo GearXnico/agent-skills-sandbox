@@ -4,6 +4,10 @@ The format follows Keep a Changelog and versions follow SemVer: a breaking chang
 
 ## [Unreleased]
 
+### Added
+
+- Dark theme that follows the system setting.
+
 ## [1.2.0] - 2026-09-30
 
 ### Added
