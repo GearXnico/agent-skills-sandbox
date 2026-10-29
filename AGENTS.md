@@ -1,6 +1,6 @@
 # AGENTS.md
 
-A small shell utility used to test agent skills. `slugify.sh` turns a title into a slug; `publish.sh` uses it to name files.
+A small shell utility used to test agent skills. `slug.sh` turns a title into a slug; `publish.sh` uses it to name files.
 
 ## Git workflow
 
