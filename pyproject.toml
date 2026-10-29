@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "wordcount"
+version = "0.1.0"
+description = "Counts words in text files."
+authors = ["Sandbox <sandbox@example.com>"]
+packages = [{ include = "wordcount", from = "src" }]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+click = "^8.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0"
+
+[tool.poetry.scripts]
+wordcount = "wordcount.cli:main"
+
+[build-system]
+requires = ["poetry-core>=1.9"]
+build-backend = "poetry.core.masonry.api"
