@@ -8,6 +8,10 @@ The format follows Keep a Changelog and versions follow SemVer: a breaking chang
 
 - Dark theme that follows the system setting.
 
+### Changed
+
+- **Breaking:** the configuration file is now `site.json`; rename `config.json` when upgrading.
+
 ### Fixed
 
 - Footer shows the current year.
