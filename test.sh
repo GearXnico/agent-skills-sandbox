@@ -8,5 +8,6 @@ expect() {
 expect "Hello World" "hello-world"
 expect "Hello  World" "hello-world"
 expect " Release 2.0 " "release-20"
+expect "Well-known title" "well-known-title"
 expect "" ""
 exit $fail
