@@ -33,5 +33,12 @@ class AdminTest(unittest.TestCase):
         self.assertEqual(status, 200)
 
 
+    def test_export_returns_every_note(self):
+        notes.add_note(server.DB, "ana", "mine")
+        status, data = server.route("GET", "/admin/export", {}, {}, {})
+        self.assertEqual(status, 200)
+        self.assertEqual(data[-1]["owner"], "ana")
+
+
 if __name__ == "__main__":
     unittest.main()

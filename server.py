@@ -28,6 +28,8 @@ def route(method, path, query, headers, body):
         if not require_admin(headers):
             return 401, {"error": "unauthorized"}
         return 200, {"notes": notes.count_notes(DB)}
+    if method == "GET" and path == "/admin/export":
+        return 200, notes.all_notes(DB)
     return 404, {"error": "not found"}
 
 
