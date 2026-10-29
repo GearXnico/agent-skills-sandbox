@@ -8,6 +8,10 @@ The format follows Keep a Changelog and versions follow SemVer: a breaking chang
 
 - Dark theme that follows the system setting.
 
+### Fixed
+
+- Footer shows the current year.
+
 ## [1.2.0] - 2026-09-30
 
 ### Added
