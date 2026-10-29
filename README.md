@@ -13,6 +13,7 @@ Test fixtures for [agent-skills](https://github.com/GearXnico/agent-skills). Eac
 | `deps` | A Node.js script with an outdated, vulnerable dependency | Checks with `npm test`, changelog under `[Unreleased]` |
 | `python-poetry` | A Python command-line tool managed with Poetry, with CI and a Dockerfile | Checks with `poetry run pytest -q`, changelog under `[Unreleased]` |
 | `python-pip` | A Python script with a loose `requirements.txt` and no package manager | Checks with `python -m pytest -q`, no changelog |
+| `review` | A shell utility and a script that uses it, with five branches to review against it: `review-bug`, `review-secret`, `review-no-test`, `review-outside` (breaks a file the diff does not touch) and `review-clean` | Checks with `./test.sh`, every change needs a test |
 
 `main` only holds this README. Pull requests opened during an eval target the scenario's base branch and are closed afterwards without merging.
 
