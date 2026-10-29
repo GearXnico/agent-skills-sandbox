@@ -15,8 +15,10 @@ def add_note(db, owner, body):
     return cur.lastrowid
 
 
-def list_notes(db, owner):
-    rows = db.execute("SELECT id, body FROM notes WHERE owner = ? ORDER BY id", (owner,))
+def list_notes(db, owner, limit=100):
+    if not 1 <= limit <= 100:
+        raise ValueError("limit must be between 1 and 100")
+    rows = db.execute("SELECT id, body FROM notes WHERE owner = ? ORDER BY id LIMIT ?", (owner, limit))
     return [{"id": r[0], "body": r[1]} for r in rows]
 
 

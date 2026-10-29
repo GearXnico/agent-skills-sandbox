@@ -19,6 +19,13 @@ class NotesTest(unittest.TestCase):
         note_id = notes.add_note(self.db, "ana", "mine")
         self.assertFalse(notes.delete_note(self.db, "ben", note_id))
 
+    def test_limit_caps_the_list(self):
+        for i in range(3):
+            notes.add_note(self.db, "ana", f"note {i}")
+        self.assertEqual(len(notes.list_notes(self.db, "ana", limit=2)), 2)
+        with self.assertRaises(ValueError):
+            notes.list_notes(self.db, "ana", limit=0)
+
     def test_rejects_empty_body(self):
         with self.assertRaises(ValueError):
             notes.add_note(self.db, "ana", "")

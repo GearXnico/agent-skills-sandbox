@@ -18,7 +18,7 @@ def require_admin(headers):
 def route(method, path, query, headers, body):
     user = headers.get("X-User")
     if method == "GET" and path == "/notes" and user:
-        return 200, notes.list_notes(DB, user)
+        return 200, notes.list_notes(DB, user, int(query.get("limit", ["100"])[0]))
     if method == "POST" and path == "/notes" and user:
         return 201, {"id": notes.add_note(DB, user, body.get("body", ""))}
     if method == "DELETE" and path == "/notes" and user:
