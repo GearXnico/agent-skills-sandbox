@@ -15,6 +15,9 @@ Test fixtures for [agent-skills](https://github.com/GearXnico/agent-skills). Eac
 | `python-pip` | A Python script with a loose `requirements.txt` and no package manager | Checks with `python -m pytest -q`, no changelog |
 | `review` | A shell utility and a script that uses it, with five branches to review against it: `review-bug`, `review-secret`, `review-no-test`, `review-outside` (breaks a file the diff does not touch) and `review-clean` | Checks with `./test.sh`, every change needs a test |
 | `incident` | A payment worker whose history, deploy log, worker logs and on-call notes record a double-charge incident: a recent change triggered a bug that had been latent for months | Checks with `./test.sh`, no changelog |
+| `adr` | A notes service with three decision records in MADR format and an index in `docs/adr/` | Checks with `./check.sh` (every record has a title and a status), no changelog |
+| `security` | A notes API in Python with SQLite, with five branches to review against it: `security-sql`, `security-secret`, `security-auth`, `security-error` and `security-clean`. Every branch passes its tests | Checks with `./test.sh`, rules for queries, admin routes and errors in `AGENTS.md` |
+| `release-dev` | A site at 1.2.0 on `release-main`, with a feature and a fix on `release-dev` to release; `release-breaking` adds a breaking change on top | Checks with `./check.sh`, changelog under `[Unreleased]`, a `Release:` rule for git-flow releases |
 
 `main` only holds this README. Pull requests opened during an eval target the scenario's base branch and are closed afterwards without merging.
 
