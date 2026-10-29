@@ -11,3 +11,4 @@ A one-page site used to test agent skills. Work goes to an integration branch; r
 - Changelog: CHANGELOG.md, under [Unreleased]
 - Update method: rebase
 - task-flow mode: safe
+- Tracker: GitHub issues, `Closes #N` in the pull request body
