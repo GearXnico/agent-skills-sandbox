@@ -11,6 +11,8 @@ Test fixtures for [agent-skills](https://github.com/GearXnico/agent-skills). Eac
 | `docs` | A site whose README, `AGENTS.md` and an accepted ADR describe its check script | Checks with `./check.sh`, changelog under `[Unreleased]` |
 | `services` | An order system described by `compose.yml`, service READMEs and an ADR, with known design flaws | Checks with `docker compose config -q`, no changelog |
 | `deps` | A Node.js script with an outdated, vulnerable dependency | Checks with `npm test`, changelog under `[Unreleased]` |
+| `python-poetry` | A Python command-line tool managed with Poetry, with CI and a Dockerfile | Checks with `poetry run pytest -q`, changelog under `[Unreleased]` |
+| `python-pip` | A Python script with a loose `requirements.txt` and no package manager | Checks with `python -m pytest -q`, no changelog |
 
 `main` only holds this README. Pull requests opened during an eval target the scenario's base branch and are closed afterwards without merging.
 
