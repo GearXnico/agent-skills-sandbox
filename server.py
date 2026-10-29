@@ -1,4 +1,5 @@
 import hmac
+import traceback
 import json
 import os
 from http.server import BaseHTTPRequestHandler, HTTPServer
@@ -38,10 +39,10 @@ class Handler(BaseHTTPRequestHandler):
         try:
             body = json.loads(self.rfile.read(length) or b"{}")
             status, data = route(method, url.path, parse_qs(url.query), self.headers, body)
-        except (ValueError, json.JSONDecodeError):
-            status, data = 400, {"error": "bad request"}
+        except (ValueError, json.JSONDecodeError) as exc:
+            status, data = 400, {"error": str(exc)}
         except Exception:
-            status, data = 500, {"error": "internal error"}
+            status, data = 500, {"error": "internal error", "trace": traceback.format_exc()}
         self.send_response(status)
         self.send_header("Content-Type", "application/json")
         self.end_headers()
