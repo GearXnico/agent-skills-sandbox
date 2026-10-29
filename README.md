@@ -14,6 +14,7 @@ Test fixtures for [agent-skills](https://github.com/GearXnico/agent-skills). Eac
 | `python-poetry` | A Python command-line tool managed with Poetry, with CI and a Dockerfile | Checks with `poetry run pytest -q`, changelog under `[Unreleased]` |
 | `python-pip` | A Python script with a loose `requirements.txt` and no package manager | Checks with `python -m pytest -q`, no changelog |
 | `review` | A shell utility and a script that uses it, with five branches to review against it: `review-bug`, `review-secret`, `review-no-test`, `review-outside` (breaks a file the diff does not touch) and `review-clean` | Checks with `./test.sh`, every change needs a test |
+| `incident` | A payment worker whose history, deploy log, worker logs and on-call notes record a double-charge incident: a recent change triggered a bug that had been latent for months | Checks with `./test.sh`, no changelog |
 
 `main` only holds this README. Pull requests opened during an eval target the scenario's base branch and are closed afterwards without merging.
 
