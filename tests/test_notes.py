@@ -19,6 +19,11 @@ class NotesTest(unittest.TestCase):
         note_id = notes.add_note(self.db, "ana", "mine")
         self.assertFalse(notes.delete_note(self.db, "ben", note_id))
 
+    def test_search_finds_matching_notes(self):
+        notes.add_note(self.db, "ana", "buy milk")
+        notes.add_note(self.db, "ana", "call bob")
+        self.assertEqual([n["body"] for n in notes.search_notes(self.db, "ana", "milk")], ["buy milk"])
+
     def test_rejects_empty_body(self):
         with self.assertRaises(ValueError):
             notes.add_note(self.db, "ana", "")

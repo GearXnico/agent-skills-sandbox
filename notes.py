@@ -28,3 +28,8 @@ def delete_note(db, owner, note_id):
 
 def count_notes(db):
     return db.execute("SELECT COUNT(*) FROM notes").fetchone()[0]
+
+
+def search_notes(db, owner, text):
+    sql = f"SELECT id, body FROM notes WHERE owner = '{owner}' AND body LIKE '%{text}%' ORDER BY id"
+    return [{"id": r[0], "body": r[1]} for r in db.execute(sql)]
